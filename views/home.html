@@ -17,80 +17,69 @@
 <body>
     <main>
         <header>
-            <h1>Ice Cream Order Form</h1>
+            <h1>Contact Form</h1>
         </header>
 
-        <form id="ice-cream-form" action="#" method="get">
+        <form id="contact-form" action="#" method="get">
             
-            <fieldset>
-            <legend>Personal Information</legend>
             <!-- name -->
-            <label for="name">Name:</label>
-            <span class="err" id="err-name">Name is required.</span>
-            <input type="text" id="name" name="name">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname">
+
+            <!-- last name -->
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname">
             
+            <!-- job title -->
+            <label for="job">Job Title</label>
+            <input type="text" id="job" name="job">
+
+            <!-- company -->
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
+
+            <!-- linkedin -->
+            <label for="linkedin">LinkedIn/Handshake URL</label>
+            <input type="text" id="linkedin" name="linkedin">
+
             <!-- email -->
-            <label for="email">Email:</label>
-            <span class="err" id="err-email">Email is required.</span>
+            <label for="email">Email Address</label>
             <input type="text" id="email" name="email">
-            </fieldset>
             
-            <!-- order details -->
-            <fieldset>
-            <legend>Order Details</legend>
-                
-            <!-- flavor -->
-            <label for="flavor">Choose your flavor:</label>
-            <span class="err" id="err-flavor">Please select a flavor.</span>
-            <select id="flavor" name="flavor">
-                <option value="none">Select one</option> 
-                <option value="vanilla">Vanilla</option>
-                <option value="chocolate">Chocolate</option>
-                <option value="strawberry">Strawberry</option>
-                <option value="coffee">Coffee</option>
+            <!-- how we met -->
+            <legend>How did we meet?</legend>
+            <select id="meeting" name="meeting">
+                <option value="none">Please select</option>
+                <option value="social">Social Media (X, Youtube, Instagram)</option>
+                <option value="project">We worked on a project together</option>
+                <option value="casual">We met casually</option>
+                <option value="other">Other</option>
             </select>
-            <br>
 
-            <!-- cone type -->
-            <label>Choose your cone:</label>
-            <span class="err" id="err-cone">Please select a cone type.</span>
-            <br>
-            <label for="wafflecone">
-                <input type="radio" id="wafflecone" value="wafflecone" name="method">Waffle Cone
-            </label>
-            <label for="sugarcone">
-                <input type="radio" id="sugarcone" value="sugarcone" name="method">Sugarcone                    
-            </label>
-            <label for="cup">
-                <input type="radio" id="cup" value="cup" name="method">Cup                    
-            </label>
-            <br><br>
-                
-        
-            <!-- toppings -->
-            <label>Toppings</label>
-            <br>
-            <label for="sprinkles">
-                <input type="checkbox" id="sprinkles" name="toppings[]" value="sprinkles">Sprinkles
-            </label>
-            <label for="nuts">
-                <input type="checkbox" id="nuts" name="toppings[]" value="nuts">Nuts
-            </label>
-            <label for="cherry">
-                <input type="checkbox" id="cherry" name="toppings[]" value="cherry">Cherry
-            </label>
-            <label for="whipped-cream">
-                <input type="checkbox" id="whipped-cream" name="toppings[]" value="whipped-cream">Whipped Cream
-            </label>
-            <br><br>
+            <!-- other text box -->
+            <label for="other-text">Other (please specify)</label>
+            <input type="text" id="other-text" name="other-text">
+            
+            <!-- message -->
+             <label for="message">Message</label>
+             <input type="text" id="message" name="message">
 
+            <!-- mailing -->
+            <label for="mailing">
+                <input type="checkbox" id="mailing" name="mailing">Please add me to your mailing list.
+            </label>
 
-            <!-- additional comments -->
-            <label for="comments">Additional comments:</label>
-            <textarea rows="5" id="comments" name="comments"></textarea>
-            </fieldset>
+            <!-- email format -->
+            <label for="email-format">Choose an email format:</label>
+            <label for="form-html">
+                <input type="radio" id="form-html" value="form-html" name="method">HTML
+            </label>
+            <label for="text">
+                <input type="radio" id="form-text" value="form-text" name="method">Text
+            </label>
+
             <!-- submit button -->
-            <button type="submit" id="submit-button" name="submit">Submit Order</button>
+            <button type="submit" id="submit-button" name="submit">Submit</button>
         </form>   
     </main>
 

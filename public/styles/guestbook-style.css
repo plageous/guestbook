@@ -58,8 +58,3 @@ main {
     color: white;
     font-size: 1rem;
 }
-
-.err {
-    color: darkred;
-    display: none;
-}
