@@ -4,50 +4,50 @@
 }
 
 body {
-    margin: 0;
-    padding: 40px;
+    
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    
+}
+
+label {
+    display: block;
 }
 
 main {
     max-width: 900px;
     margin: 0 auto;
-    border-radius: 6px;
 }
 
 header h1 {
     text-align: center;
-    margin-top: 0;
 }
 
-input[type="text"], {
-    
+.top-row, .middle-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 20px;
+    margin-bottom: 20px;
 }
 
-legend {
-    color: rgb(76, 175, 80);
-    font-size: 1.25rem;
-    text-align: center;
-    font-weight: bold;
-    margin: 0 auto;
-    padding: 0 12px;
+.bottom-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 20px;
+    margin-bottom: 20px;
 }
 
-main {
-    background-color: white;
-    width: 30%;
-    max-width: 500px;
-    min-width: fit-content;
-    margin: 0 auto 1rem auto;
-    padding: 0 1rem 2rem 1rem;
+input[type="text"], select, textarea {
+    width: 100%;
 }
+
 
 #submit-button {
-    width: 100%;
-    border: none;
-    background-color: rgb(76, 175, 80);
-    padding: 0.75rem 0.75rem;
-    border-radius: .5rem;
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
+    
 }
