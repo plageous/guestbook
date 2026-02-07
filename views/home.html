@@ -38,7 +38,7 @@
 
             <div class="field">
                 <!-- job title -->
-                <label for="job">Job Title</label>
+                <label for="job">Job Title (optional)</label>
                 <input type="text" id="job" name="job">
             </div>
             </section>
@@ -46,13 +46,15 @@
             <section class="middle-row">
             <div class="field">
                 <!-- company -->
-                <label for="company">Company</label>
+                <label for="company">Company (optional)</label>
                 <input type="text" id="company" name="company">
             </div>
             
             <div class="field">
                 <!-- linkedin -->
-                <label for="linkedin">LinkedIn/Handshake URL</label>
+                <label for="linkedin">LinkedIn (optional)
+                    <span class="err" id="err-linkedin">Enter a valid LinkedIn URL.</span>
+                </label>
                 <input type="text" id="linkedin" name="linkedin">
             </div>
 
