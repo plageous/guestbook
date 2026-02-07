@@ -64,6 +64,11 @@ input[type="text"], select, textarea {
     margin-bottom: 3rem;
 }
 
+.err {
+    color: darkred;
+    display: none;
+}
+
 #mailing {
     margin-top: 2rem;
     margin-bottom: .75rem;

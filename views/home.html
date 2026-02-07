@@ -22,13 +22,17 @@
             <section class="top-row">
             <div class="field">
                 <!-- first name -->
-                <label for="fname">First Name</label>
+                <label for="fname">First Name
+                    <span class="err" id="err-fname">First name is required.</span>
+                </label>
                 <input type="text" id="fname" name="fname">
             </div>
 
             <div class="field">
                 <!-- last name -->
-                <label for="lname">Last Name</label>
+                <label for="lname">Last Name
+                    <span class="err" id="err-lname">Last name is required.</span>
+                </label>
                 <input type="text" id="lname" name="lname">
             </div>
 
@@ -54,7 +58,9 @@
 
             <div class="field">
                 <!-- email -->
-                <label for="email">Email Address</label>
+                <label for="email">Email Address
+                    <span class="err" id="err-email">Email is required for mailing list.</span>
+                </label>
                 <input type="text" id="email" name="email">
             </div>
             </section>
@@ -63,6 +69,7 @@
             <!-- how we met -->
             <div class="field">
                 <label>How did we meet?</label>
+                <span class="err" id="err-how-we-met">Please select an option.</span>
                 <select id="meeting" name="meeting">
                     <option value="none">Please select</option>
                     <option value="social">Social Media (X, Youtube, Instagram)</option>
