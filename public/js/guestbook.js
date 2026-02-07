@@ -6,8 +6,9 @@ document.getElementById("contact-form").onsubmit = () => {
     let lname = document.getElementById("lname").value.trim();
     let email = document.getElementById("email").value.trim();
     let linkedin = document.getElementById("linkedin").value.trim();
-
     let how_we_met = document.getElementById("meeting").value;
+    let mailing_list = document.getElementById("mailing");
+    let other = document.getElementById("other-field");
 
     // first name
     if (!fname) {
@@ -22,22 +23,34 @@ document.getElementById("contact-form").onsubmit = () => {
     }
 
     // email
-    if (!email.includes("@") && !email.includes(".")) {
+    if (!(email.includes("@") && email.includes(".")) && email) {
         document.getElementById("err-email").style.display = "block";
         isValid = false;
     }
 
-    // linkedin
-    if (!linkedin.includes("https://linkedin.com/in/" && linkedin)) {
-        document.getElementById("err-linkedin").style.display = "block";
+    // email w/ mailing list
+    if (!email && mailing_list.checked) {
+        document.getElementById("err-email-mailing").style.display = "block";
         isValid = false;
     }
 
+    // linkedin (hurts my brain)
+    if (!(linkedin.startsWith("https://linkedin.com/in/") ||
+          linkedin.startsWith("https://www.linkedin.com/in/")) && linkedin) {
+        document.getElementById("err-linkedin").style.display = "block";
+        isValid = false;
+    }
 
     // how we met
     if (how_we_met == "none") {
         document.getElementById("err-how-we-met").style.display = "block";
         isValid = false;
+    }
+
+    if (how_we_met == "other") {
+        other.style.display = "block";
+    } else {
+        other.style.display = "none";
     }
 
     if (!isValid) {
