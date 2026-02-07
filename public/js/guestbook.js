@@ -1,4 +1,4 @@
-document.getElementById("contact-form").onsubmit = () => {
+document.getElementById("contact-form").onsubmit = () => { 
     clearErrors();
     let isValid = true;
 
@@ -8,7 +8,6 @@ document.getElementById("contact-form").onsubmit = () => {
     let linkedin = document.getElementById("linkedin").value.trim();
     let how_we_met = document.getElementById("meeting").value;
     let mailing_list = document.getElementById("mailing");
-    let other = document.getElementById("other-field");
 
     // first name
     if (!fname) {
@@ -23,7 +22,7 @@ document.getElementById("contact-form").onsubmit = () => {
     }
 
     // email
-    if (!(email.includes("@") && email.includes(".")) && email) {
+    if (!valid(email) && email) {
         document.getElementById("err-email").style.display = "block";
         isValid = false;
     }
@@ -47,12 +46,7 @@ document.getElementById("contact-form").onsubmit = () => {
         isValid = false;
     }
 
-    if (how_we_met == "other") {
-        other.style.display = "block";
-    } else {
-        other.style.display = "none";
-    }
-
+    // prevents submission if not valid
     if (!isValid) {
         window.scrollTo({top: 0, left: 0, behavior:'smooth'});
     }
@@ -64,4 +58,10 @@ function clearErrors() {
     for (let i = 0; i < errors.length; i++) {
         errors[i].style.display = "none";
     }
+}
+
+// email validator
+function valid(email) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
 }

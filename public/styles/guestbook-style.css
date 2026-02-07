@@ -69,10 +69,6 @@ input[type="text"], select, textarea {
     display: none;
 }
 
-.other-text-field {
-    display: none;
-}
-
 #mailing {
     margin-top: 2rem;
     margin-bottom: .75rem;
