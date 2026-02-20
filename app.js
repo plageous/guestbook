@@ -1,23 +1,20 @@
-// express import statement
 import express from 'express';
-
-// instance of app object
 const app = express();
-
-// server port
 const PORT = 3000;
 
-// static file serving
-// tells express to use files in "public" directory
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
-// main route ('/')
+// main
 app.get('/', (req, res) => {
-    // sends home.html file to client
     res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
 
-// start server, listen on PORT
+// contact submission
+app.post('/book-appointment', (req, res) => {
+
+});
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
