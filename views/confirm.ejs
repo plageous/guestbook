@@ -24,7 +24,7 @@
     <% } %>
     <% if (contact.mailing.checked) { %>
         <p>You are signed up for my mailing list.</p>
-        <p>You will recieve emails in <%= method %> format.</p>
+        <p>You will recieve emails in <%= contact.method %> format.</p>
     <% } %>
     <p>Submitted at <%= contact.timestamp.toLocaleString() %></p>
     <a href="/">Submit another contact.</a>
