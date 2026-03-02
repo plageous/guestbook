@@ -6,16 +6,17 @@ const contacts = [];
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 
 
 // main
 app.get('/', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
 });
 
 
 app.get('/admin', (req, res) => {
-    res.send(contacts);
+    res.render('admin', { contacts });
 });
 
 
@@ -31,12 +32,13 @@ app.post('/submit-contact', (req, res) => {
         other: req.body.other,
         message: req.body.message,
         mailing: req.body.mailing,
-        method: req.body.method
+        method: req.body.method,
+        timestamp: new Date()
     }
 
     contacts.push(contact);
 
-    res.sendFile(`${import.meta.dirname}/views/confirm.html`);
+    res.render('confirm', { contact });
 });
 
 

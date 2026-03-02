@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+</head>
+<body>
+    <h1>Thanks <%= contact.fname %>!</h1>
+    <h1>Your information has been logged, and I will reply to you soon!</h1>
+    <h2>Your details:</h2>
+    <p><%= contact.fname %> <%= contact.lname %></p>
+    <% if (contact.job.trim() != "") { %>
+        <p>You are a(n) <%= contact.job %>.</p>
+    <% } %>
+    <% if (contact.company.trim() != "") { %>
+        <p>You work at <%= contact.company %>.</p>
+    <% } %>
+    <% if (contact.linkedin.trim() != "") { %>
+        <p>Your LinkedIn URL: <%= contact.linkedin %></p>
+    <% } %>
+    <% if (contact.email.trim() != "") { %>
+        <p>Your email: <%= contact.email %></p>
+    <% } %>
+    <% if (contact.mailing.checked) { %>
+        <p>You are signed up for my mailing list.</p>
+        <p>You will recieve emails in <%= method %> format.</p>
+    <% } %>
+    <p>Submitted at <%= contact.timestamp.toLocaleString() %></p>
+    <a href="/">Submit another contact.</a>
+</body>
+</html>
