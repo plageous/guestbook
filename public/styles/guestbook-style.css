@@ -8,6 +8,21 @@
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    color: aqua;
+}
+
+a:focus {
+    color: blueviolet;
+}
+
+
+
 body {
     background-color: rgb(240, 240, 240);
 }
@@ -16,6 +31,13 @@ form {
     background-color: white;
     padding: 2px 20px 20px 20px;
     border-radius: 8px;
+}
+
+header {
+    background-color: smokewhite;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0 1.5rem;
 }
 
 label {
