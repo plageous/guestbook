@@ -11,7 +11,11 @@ app.set('view engine', 'ejs');
 
 // main
 app.get('/', (req, res) => {
-    res.render('home');
+    res.sendFile(`${import.meta.dirname}/views/home.html`);
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact');
 });
 
 
