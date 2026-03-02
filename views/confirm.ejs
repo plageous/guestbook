@@ -9,7 +9,7 @@
     <h1>Thanks <%= contact.fname %>!</h1>
     <h1>Your information has been logged, and I will reply to you soon!</h1>
     <h2>Your details:</h2>
-    <p><%= contact.fname %> <%= contact.lname %></p>
+    <p><strong><%= contact.fname %> <%= contact.lname %></strong></p>
     <% if (contact.job.trim() != "") { %>
         <p>You are a(n) <%= contact.job %>.</p>
     <% } %>
@@ -22,9 +22,12 @@
     <% if (contact.email.trim() != "") { %>
         <p>Your email: <%= contact.email %></p>
     <% } %>
-    <% if (contact.mailing.checked) { %>
+    <% if (contact.mailing == "on") { %>
         <p>You are signed up for my mailing list.</p>
         <p>You will recieve emails in <%= contact.method %> format.</p>
+    <% } %>
+    <% if (contact.message.trim() != "") { %>
+        <p>Your message to me: <%= contact.message %></p>
     <% } %>
     <p>Submitted at <%= contact.timestamp.toLocaleString() %></p>
     <a href="/">Submit another contact.</a>
