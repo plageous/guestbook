@@ -1,0 +1,89 @@
+/* properties are organized alphabetically. you should just use ctrl + F. */
+:root {
+    --primary: white;
+    --bg: #7B4C4F;
+    --header-color: #EDDBCD;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* turns light grey when clicking on link */
+a:focus {
+    color: lightgrey;
+}
+
+/* turns grey when hovering over link */
+a:hover {
+    color: grey;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg);
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.01rem;
+    margin: auto;
+    max-width: 70%;
+}
+
+div {
+    margin: 2rem 0 4rem;
+}
+
+header {
+    display: flex;
+    background-color: var(--header-color);
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 -1rem 1rem -1rem;
+    padding-bottom: 1rem;
+}
+
+header h2 {
+    margin-top: -1rem;
+}
+
+img {
+    clip-path: inset(0 0 200px 0);
+    clip-path: circle(25% at 50% 25%);
+    margin-top: 1rem;
+    margin-bottom: -250px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+main {
+    background-color: var(--primary);
+    padding: 0 1rem 1rem 1rem;
+}
+
+p {
+    font-size: 12px;
+    margin-left: 2rem;
+}
+
+ul {
+    font-size: 12px;
+}
+
+@media (min-width: 600px) {
+    .body {
+        line-height: 1.2;
+    }
+
+    .header {
+        padding-bottom: 0.25rem;
+    }
+
+    .p, .ul {
+        font-size: 10px;
+        margin-left: 0.25rem;
+    }
+}
