@@ -24,6 +24,7 @@
                 <th>Occupation</th>
                 <th>Company</th>
                 <th>LinkedIn</th>
+                <th>Message</th>
                 <th>Meeting</th>
                 <th>Mailing + Method</th>
                 <th>Timestamp</th>                                
@@ -37,16 +38,17 @@
             <td><%= contact.job %></td>
             <td><%= contact.company %></td>
             <td><%= contact.linkedin %></td>
+            <td><%= contact.message %></td>
             <td><%= contact.meeting %></td>
             <td><%= contact.mailing %>< <%= contact.method %></td>
-            <td><%= order.timestamp.toLocaleString() %></td>
+            <td><%= contact.timestamp.toLocaleString() %></td>
         </tr>
     <% }) %>
         </tbody>    
     </table>
 
     <script>
-        new DataTable('#contactr-table', {
+        new DataTable('#contact-table', {
             responsive: true
         });
     </script>
