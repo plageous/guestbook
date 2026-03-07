@@ -52,28 +52,40 @@ app.get('/admin', async (req, res) => {
     }
 });
 
-// post contact submission
-app.post('/submit-contact', (req, res) => {
-    const contact = {
-        fname: req.body.fname,
-        lname: req.body.lname,
-        job: req.body.job,
-        company: req.body.company,
-        linkedin: req.body.linkedin,
-        email: req.body.email,
-        meeting: req.body.meeting,
-        other: req.body.other,
-        message: req.body.message,
-        mailing: req.body.mailing,
-        method: req.body.method,
-        timestamp: new Date()
+app.post('/submit-contact', async (req, res) => {
+    try {
+        const contact = req.body;        
+        console.log('New order submitted:', contact);
+
+        // SQL injection? whats that?
+        const sql = 
+        `INSERT INTO contacts(fname, lname, job, company, linkedin, email, meeting, other, message, mailing, method)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
+
+        const params = [
+            contact.fname,
+            contact.lname,
+            contact.job,
+            contact.company,
+            contact.linkedin,
+            contact.email,
+            contact.meeting,
+            contact.other,
+            contact.message,
+            contact.mailing,
+            contact.method
+        ];
+        
+        const result = await pool.execute(sql, params);
+        console.log('Contact saved with ID:', result[0].insertId);
+
+        // Render confirmation page with the adoption data
+        res.render('confirm', { contact });        
+    } catch (err) {
+        console.error('Error saving contact:', err);
+        res.status(500).send('Sorry, there was an error saving your contact. Please try again.');
     }
-
-    contacts.push(contact);
-
-    res.render('confirm', { contact });
 });
-
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
