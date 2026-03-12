@@ -72,7 +72,7 @@ app.post('/submit-contact', async (req, res) => {
             contact.meeting,
             contact.other,
             contact.message,
-            contact.mailing,
+            contact.mailing ? 1 : 0,
             contact.method
         ];
         
@@ -89,4 +89,5 @@ app.post('/submit-contact', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
+
 });
