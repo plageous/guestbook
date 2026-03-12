@@ -63,17 +63,17 @@ app.post('/submit-contact', async (req, res) => {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
 
         const params = [
-            contact.fname,
-            contact.lname,
-            contact.job,
-            contact.company,
-            contact.linkedin,
-            contact.email,
-            contact.meeting,
-            contact.other,
-            contact.message,
+            contact.fname || '',
+            contact.lname || '',
+            contact.job || '',
+            contact.company || '',
+            contact.linkedin || '',
+            contact.email || '',
+            contact.meeting || '',
+            contact.other || '',
+            contact.message || '',
             contact.mailing ? 1 : 0,
-            contact.method
+            contact.method || ''
         ];
         
         const result = await pool.execute(sql, params);
@@ -91,3 +91,4 @@ app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 
 });
+
