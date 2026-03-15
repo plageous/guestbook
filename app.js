@@ -3,9 +3,6 @@ import mysql2 from 'mysql2';
 import dotenv from 'dotenv';
 const app = express();
 const PORT = 3003;
-
-const contacts = [];
-
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -33,8 +30,13 @@ app.get('/db-test', async (req, res) => {
 
 // main
 app.get('/', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
 });
+
+// portfolio page
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio');
+})
 
 // contact page
 app.get('/contact', (req, res) => {
@@ -52,6 +54,7 @@ app.get('/admin', async (req, res) => {
     }
 });
 
+// contact submission
 app.post('/submit-contact', async (req, res) => {
     try {
         const contact = req.body;        
@@ -62,6 +65,7 @@ app.post('/submit-contact', async (req, res) => {
         `INSERT INTO contacts(fname, lname, job, company, linkedin, email, meeting, other, message, mailing, method)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
 
+        // includes preventative measures against null values
         const params = [
             contact.fname || '',
             contact.lname || '',
@@ -89,6 +93,4 @@ app.post('/submit-contact', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
-
 });
-
