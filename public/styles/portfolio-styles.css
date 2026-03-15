@@ -8,12 +8,19 @@
 a {
     color: black;
     text-decoration: none;
-    margin: 0 1rem 0 1rem;
+}
+
+header a {
+    margin: 0 1rem 0 1rem;  
+}
+
+p a {
+    color:blue;
 }
 
 /* turns light grey when clicking on link */
 a:focus {
-    color: lightgrey;
+    color: grey;
 }
 
 /* turns grey when hovering over link */
@@ -51,13 +58,17 @@ header h2 {
     margin-top: -1rem;
 }
 
-img {
+header img {
     clip-path: inset(0 0 200px 0);
     clip-path: circle(25% at 50% 25%);
     margin-top: 1rem;
     margin-bottom: -250px;
     object-fit: cover;
     overflow: hidden;
+}
+
+img {
+    margin-left: 2rem;
 }
 
 main {
