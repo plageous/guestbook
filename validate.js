@@ -24,9 +24,9 @@ export function validateForm(data) {
     // same, but last name
     if (data.lname.trim() == "") { errors.push("Last name is required."); }
     // meeting validiation
-    if (!validMeetings.includes(meeting)) { errors.push("A valid meeting is required."); }
+    if (!validMeetings.includes(data.meeting)) { errors.push("A valid meeting is required."); }
     // mailing list method validation
-    if (mailing === 1 && !(method == "form-html" || method == "form-text")) { errors.push("HTML or Text email must be selected."); }
+    if (data.mailing === 1 && !(data.method == "form-html" || data.method == "form-text")) { errors.push("HTML or Text email must be selected."); }
 
     console.log(errors);
     return { isValid: errors.length === 0, errors};

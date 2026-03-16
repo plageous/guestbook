@@ -58,7 +58,15 @@ app.get('/admin', async (req, res) => {
 // contact submission
 app.post('/submit-contact', async (req, res) => {
     try {
-        const contact = req.body;        
+        const contact = req.body;
+        const valid = validateForm(contact);
+
+        if (!valid.isValid) {
+            console.log(valid);
+            res.render('home', {errors: valid.errors});
+            return;
+        }
+
         console.log('New order submitted:', contact);
 
         // SQL injection? whats that?
