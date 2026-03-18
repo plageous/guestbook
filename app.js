@@ -63,7 +63,7 @@ app.post('/submit-contact', async (req, res) => {
 
         if (!valid.isValid) {
             console.log(valid);
-            res.render('home', {errors: valid.errors});
+            res.render('contact', {errors: valid.errors});
             return;
         }
 
